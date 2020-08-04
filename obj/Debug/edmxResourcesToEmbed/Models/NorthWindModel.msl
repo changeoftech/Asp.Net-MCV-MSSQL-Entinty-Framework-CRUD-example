@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TestDatabaseModelStoreContainer" CdmEntityContainer="TestDatabaseEntities">
+    <EntitySetMapping Name="Bilgi">
+      <EntityTypeMapping TypeName="TestDatabaseModel.Bilgi">
+        <MappingFragment StoreEntitySet="Bilgi">
+          <ScalarProperty Name="SICIL_NO" ColumnName="SICIL_NO" />
+          <ScalarProperty Name="AD" ColumnName="AD" />
+          <ScalarProperty Name="SOYAD" ColumnName="SOYAD" />
+          <ScalarProperty Name="GOREVI" ColumnName="GOREVI" />
+          <ScalarProperty Name="IS_BASLANGIC_TARIH" ColumnName="IS_BASLANGIC_TARIH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

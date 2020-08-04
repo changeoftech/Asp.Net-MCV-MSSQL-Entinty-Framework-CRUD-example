@@ -1,0 +1,67 @@
+﻿@model IEnumerable<RegisterTestApp.Models.Bilgi>
+
+@{
+    Layout = null;
+}
+
+<h2>Çalışan Bilgileri</h2>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Çalışan Ekle", "Insert")
+    </p>
+    <table width="100%">
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.SICIL_NO)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.AD)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.SOYAD)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.GOREVI)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.IS_BASLANGIC_TARIH)
+            </td>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SICIL_NO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AD)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SOYAD)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GOREVI)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IS_BASLANGIC_TARIH)
+                </td>
+                <td>
+                    @Html.ActionLink("Düzenle", "Edit", new { SICIL_NO = item.SICIL_NO }) |
+                    @Html.ActionLink("Detaylar", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Sil", "Delete", new {  SICIL_NO = item.SICIL_NO  })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>

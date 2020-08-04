@@ -1,0 +1,80 @@
+﻿
+@model RegisterTestApp.Models.Bilgi
+
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Insert</title>
+</head>
+<body>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Kayıt Defteri</legend>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.SICIL_NO)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.SICIL_NO)
+                @Html.ValidationMessageFor(model => model.SICIL_NO)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.AD)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.AD)
+                @Html.ValidationMessageFor(model => model.AD)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.SOYAD)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.SOYAD)
+                @Html.ValidationMessageFor(model => model.SOYAD)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.GOREVI)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.GOREVI)
+                @Html.ValidationMessageFor(model => model.GOREVI)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.IS_BASLANGIC_TARIH)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.IS_BASLANGIC_TARIH)
+                @Html.ValidationMessageFor(model => model.IS_BASLANGIC_TARIH)
+            </div>
+
+            <p>
+                <input type="submit" value="Kaydet" />
+            </p>
+        </fieldset>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Select")
+    </div>
+</body>
+</html>
+
